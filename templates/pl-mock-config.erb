@@ -9,13 +9,9 @@ config_opts['target_arch'] = '<%= target_arch %>'
 config_opts['legal_host_arches'] = (<%= legal_host_arches %>)
 config_opts['chroot_setup_cmd'] = '<%= chroot_setup_cmd %>'
 config_opts['dist']= '<%= dist  %>'
-<% if @dist_macro -%>
-config_opts['macros']['%dist'] = '<%= dist_macro %>'
-<% end -%>
-<% if @is_vendor_puppetlabs -%>
-config_opts['macros']['%_host_vendor'] = 'Puppet Labs'
-<%end -%>
-
+<%- macro_opt_array.sort_by {|key, value| key}.each do |key,value| -%>
+config_opts['macros']['<%= value['macro'] -%>'] = '<%= value['val'] -%>'
+<%- end if @macro_opt_array -%>
 config_opts['yum.conf'] = """
 
 [main]

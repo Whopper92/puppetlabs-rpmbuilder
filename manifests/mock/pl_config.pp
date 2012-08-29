@@ -5,7 +5,7 @@ define rpmbuilder::mock::pl_config (
   $legal_host_arches          = "'i386','i586','i686','x86_64'",
   $chroot_setup_cmd           = "groupinstall buildsys-build",
   $dist,
-  $dist_macro                 = undef,
+  $macro_opt_array            = undef,
   $base_repo_baseurl          = undef,
   $base_mirrorlist            = undef,
   $base_debug_mirrorlist      = undef,
@@ -19,7 +19,6 @@ define rpmbuilder::mock::pl_config (
   $puppet_dev_baseurl         = undef,
   $epel_repo_mirrorlist       = undef,
   $failover_priority          = undef,
-  $is_vendor_puppetlabs       = undef,
 ) {
 
   file { "${config}":

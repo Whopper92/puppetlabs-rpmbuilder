@@ -9,7 +9,11 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root           => 'pl-5-i386',
     target_arch          => 'i386',
     dist                 => 'el5',
-    dist_macro           => '.el5',
+    macro_opt_array      => {
+        dist        => { 'macro' => '%dist', 'val' => '.el5'  },
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+        rhel        => { 'macro' => '%rhel', 'val' => '5'  },
+    },
     base_mirrorlist      => 'http://mirrorlist.centos.org/?release=5&arch=i386&repo=os',
     updates_mirrorlist   => 'http://mirrorlist.centos.org/?release=5&arch=i386&repo=updates',
     puppet_prod_baseurl  => 'http://yum.puppetlabs.com/el/5/products/i386',
@@ -23,7 +27,11 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root           => 'pl-5-i386-dev',
     target_arch          => 'i386',
     dist                 => 'el5',
-    dist_macro           => '.el5',
+    macro_opt_array      => {
+        dist        => { 'macro' => '%dist', 'val' => '.el5'  },
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+        rhel        => { 'macro' => '%rhel', 'val' => '5'  },
+    },
     base_mirrorlist      => 'http://mirrorlist.centos.org/?release=5&arch=i386&repo=os',
     updates_mirrorlist   => 'http://mirrorlist.centos.org/?release=5&arch=i386&repo=updates',
     puppet_prod_baseurl  => 'http://yum.puppetlabs.com/el/5/products/i386',
@@ -37,7 +45,11 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-5-x86_64',
     target_arch           => 'x86_64',
     dist                  => 'el5',
-    dist_macro            => '.el5',
+    macro_opt_array      => {
+        dist        => { 'macro' => '%dist', 'val' => '.el5'  },
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+        rhel        => { 'macro' => '%rhel', 'val' => '5'  },
+    },
     base_mirrorlist       => 'http://mirrorlist.centos.org/?release=5&arch=x86_64&repo=os',
     updates_mirrorlist    => 'http://mirrorlist.centos.org/?release=5&arch=x86_64&repo=updates',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/el/5/products/x86_64',
@@ -51,7 +63,11 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-5-x86_64-dev',
     target_arch           => 'x86_64',
     dist                  => 'el5',
-    dist_macro            => '.el5',
+    macro_opt_array      => {
+        dist        => { 'macro' => '%dist', 'val' => '.el5'  },
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+        rhel        => { 'macro' => '%rhel', 'val' => '5'  },
+    },
     base_mirrorlist       => 'http://mirrorlist.centos.org/?release=5&arch=x86_64&repo=os',
     updates_mirrorlist    => 'http://mirrorlist.centos.org/?release=5&arch=x86_64&repo=updates',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/el/5/products/x86_64/',
@@ -66,6 +82,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-6-i386',
     target_arch           => 'i386',
     dist                  => 'el6',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrorlist.centos.org/?release=6&arch=i386&repo=os',
     updates_mirrorlist    => 'http://mirrorlist.centos.org/?release=6&arch=i386&repo=updates',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/el/6/products/i386',
@@ -79,6 +98,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-6-i386-dev',
     target_arch           => 'i386',
     dist                  => 'el6',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrorlist.centos.org/?release=6&arch=i386&repo=os',
     updates_mirrorlist    => 'http://mirrorlist.centos.org/?release=6&arch=i386&repo=updates',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/el/6/products/i386',
@@ -92,6 +114,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-6-x86_64',
     target_arch           => 'x86_64',
     dist                  => 'el6',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os',
     updates_mirrorlist    => 'http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/el/6/products/x86_64',
@@ -105,6 +130,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-6-x86_64-dev',
     target_arch           => 'x86_64',
     dist                  => 'el6',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os',
     updates_mirrorlist    => 'http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/el/6/products/x86_64/',
@@ -119,6 +147,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-fc15-i386',
     target_arch           => 'i686',
     dist                  => 'fc15',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrors.cat.pdx.edu/fedora/linux/releases/15/Fedora/i386/os/',
     updates_mirrorlist    => 'http://mirrors.cat.pdx.edu/fedora/linux/updates/15/i386',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/fedora/f15/products/i386/',
@@ -130,6 +161,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-fc15-i386-dev',
     target_arch           => 'i686',
     dist                  => 'fc15',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-15&arch=i386',
     updates_mirrorlist    => 'http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f15&arch=i386',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/fedora/f15/products/i386/',
@@ -142,6 +176,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-fc15-x86_64',
     target_arch           => 'x86_64',
     dist                  => 'fc15',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_repo_baseurl     => 'http://mirrors.cat.pdx.edu/fedora/linux/releases/15/Fedora/x86_64/os/',
     updates_repo_baseurl  => 'http://mirrors.cat.pdx.edu/fedora/linux/updates/15/x86_64',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/fedora/f15/products/x86_64/',
@@ -153,6 +190,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-fc15-x86_64-dev',
     target_arch           => 'x86_64',
     dist                  => 'fc15',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-15&arch=x86_64',
     updates_mirrorlist    => 'http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f15&arch=x86_64',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/fedora/f15/products/x86_64/',
@@ -165,6 +205,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'fedora-16-i386',
     target_arch           => 'i386',
     dist                  => 'fc16',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_repo_baseurl     => 'http://mirrors.cat.pdx.edu/fedora/linux/releases/16/Fedora/i386/os/',
     updates_repo_baseurl  => 'http://mirrors.cat.pdx.edu/fedora/linux/updates/16/i386',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/fedora/f16/products/i386/',
@@ -176,6 +219,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-fc16-i386-dev',
     target_arch           => 'x86_64',
     dist                  => 'i686',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_repo_baseurl     => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-16&arch=i386',
     updates_repo_baseurl  => 'http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f16&arch=i386',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/fedora/f16/products/i386/',
@@ -188,6 +234,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'pl-fc16-x86_64',
     target_arch           => 'x86_64',
     dist                  => 'fc16',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrors.cat.pdx.edu/fedora/linux/releases/16/Fedora/x86_64/os/',
     updates_mirrorlist    => 'http://mirrors.cat.pdx.edu/fedora/linux/updates/16/x86_64',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/fedora/f16/products/x86_64/',
@@ -199,6 +248,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root            => 'fedora-17-x86_64',
     target_arch           => 'x86_64',
     dist                  => 'fc16',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist       => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-16&arch=x86_64',
     updates_mirrorlist    => 'http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f16&arch=x86_64',
     puppet_prod_baseurl   => 'http://yum.puppetlabs.com/fedora/f16/products/x86_64/',
@@ -211,6 +263,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root               => 'pl-fc17-i386',
     target_arch              => 'i686',
     dist                     => 'fc17',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist          => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-17&arch=i386',
     base_debug_mirrorlist    => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-debug-17&arch=i386',
     updates_mirrorlist       => 'http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f17&arch=i386',
@@ -224,6 +279,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root               => 'pl-fc17-i386-dev',
     target_arch              => 'i686',
     dist                     => 'fc17',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist          => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-17&arch=i386',
     base_debug_mirrorlist    => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-debug-17&arch=i386',
     updates_mirrorlist       => 'http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f17&arch=i386',
@@ -238,6 +296,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root                => 'pl-fc-17-x86_64',
     target_arch               => 'x86_64',
     dist                      => 'fc17',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist           => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-17&arch=x86_64',
     base_debug_mirrorlist     => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-debug-17&arch=x86_64',
     updates_mirrorlist        => 'http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f17&arch=x86_64',
@@ -251,6 +312,9 @@ class rpmbuilder::mock::puppetlabs_mocks {
     build_root                => 'pl-fc17-x86_64-dev',
     target_arch               => 'x86_64',
     dist                      => 'fc17',
+    macro_opt_array      => {
+        host_vendor => { 'macro' => '%_host_vendor', 'val' => 'Puppet Labs'  },
+    },
     base_mirrorlist           => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-17&arch=x86_64',
     base_debug_mirrorlist     => 'http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-debug-17&arch=i386',
     updates_mirrorlist        => 'http://mirrors.fedoraproject.org/mirrorlist?repo=updates-released-f17&arch=x86_64',
@@ -260,4 +324,3 @@ class rpmbuilder::mock::puppetlabs_mocks {
     puppet_dev_baseurl        => 'http://yum.puppetlabs.com/fedora/f17/devel/x86_64/',
   }
 }
-

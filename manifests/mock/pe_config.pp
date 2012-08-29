@@ -8,8 +8,8 @@ define rpmbuilder::mock::pe_config (
  redhat-release-server redhat-rpm-config rpm-build sed shadow-utils tar unzip\
  util-linux-ng which xz buildsys-macros",
   $dist,
+  $macro_opt_array      = undef,
   $ccache_enable        = 'False',
-  $dist_macro           = undef,
   $base_repo_baseurl    = undef,
   $base_mirrorlist      = undef,
   $updates_repo_baseurl = undef,
