@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe 'rpmbuilder::mock::pe_config', :type => 'define' do
+describe 'rpmbuilder::mock::config', :type => 'define' do
 
-  let(:title) { 'pe_mock' }
+  let(:title) { 'mock_config' }
   context 'Given some parameters, a configuration should be created' do
 
     let(:params) {{

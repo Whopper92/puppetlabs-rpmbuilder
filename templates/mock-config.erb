@@ -9,12 +9,12 @@ config_opts['target_arch'] = '<%= target_arch %>'
 config_opts['legal_host_arches'] = (<%= legal_host_arches %>)
 config_opts['chroot_setup_cmd'] = '<%= chroot_setup_cmd %>'
 config_opts['dist']= '<%= dist  %>'
-<% if @dist_macro -%>
-config_opts['macros']['%dist'] = '<%= dist_macro %>'
+<% if @ccache_enable -%>
+config_opts['plugin_conf']['ccache_enable'] = <%= ccache_enable %>
 <% end -%>
-<% if @is_vendor_puppetlabs -%>
-config_opts['macros']['%_host_vendor'] = 'Puppet Labs'
-<%end -%>
+<%- macro_opts.sort_by {|key, value| key}.each do |key,value| -%>
+config_opts['macros']['<%= value['macro'] -%>'] = '<%= value['val'] -%>'
+<%- end if @macro_opts -%>
 
 config_opts['yum.conf'] = """
 
@@ -100,5 +100,22 @@ enabled=1
 name=epel
 mirrorlist=<%= epel_repo_mirrorlist %>
 includepkgs=epel-release ccache
+<% end -%>
+<% if @pe_repo_baseurl -%>
+
+[pe]
+enabled=1
+baseurl=<%= pe_repo_baseurl %>
+skip_if_unavailable=1
+proxy=_none_
+<% end -%>
+<% if @pe_extras_repo_baseurl -%>
+[pe_extras]
+
+name=pe_extras
+enabled=1
+baseurl=<%= pe_extras_repo_baseurl %>
+skip_if_unavailable=1
+proxy=_none_
 <% end -%>
 """
